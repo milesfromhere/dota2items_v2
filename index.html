@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOTA2ITEM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./images/dota2item.svg" alt="DOTA2ITEM" style="height: 200px;">
+        </div>
+        <div class="nav">
+            <span style="color: white; font-weight: bold; font-size: 20px;">МАРКЕТПЛЕЙС</span>
+            <a href="#" class="nav-link">РЫНОК</a>
+            <a href="#" class="nav-link active">ПРОДАТЬ ИНВЕНТАРЬ</a>
+        </div>
+        <div class="user-panel">
+            <span class="balance">Баланс: 0,00$</span>
+            <button class="profile-btn">Профиль</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="content">
+            <div class="selected-items">
+                <div class="selected-items-preview" id="selectedItemsPreview">
+                    <span id="selectedItemsText">Выберите товары (0)</span>
+                </div>
+                <div class="actions">
+                    <button class="action-btn buy-btn" onclick="openBasket()">Купить</button>
+                    <button class="action-btn clear-btn" onclick="clearBasket()">Очистить</button>
+                </div>
+            </div>
+            <div class="all-items">
+                <a href="#">Все товары</a>
+            </div>
+            <div class="items-grid" id="itemsGrid">
+                <div class="item" onclick="showItemModal(this)" 
+                     data-item-image="./images/v1_91.png" 
+                     data-item-name="Arms of Desolation" 
+                     data-item-price="7.38"
+                     data-item-rarity="Immortal"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_91.png" alt="Arms of Desolation">
+                    <span class="item-price">7,38$</span>
+                    <span class="item-name">Arms of Desolation</span>
+                </div>
+
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_97.png" 
+                     data-item-name="Helm of the Dominator" 
+                     data-item-price="2.50"
+                     data-item-rarity="Rare"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_97.png" alt="Item">
+                    <span class="item-price">2,50$</span>
+                    <span class="item-name">Helm of the Dominator</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_103.png" 
+                     data-item-name="Dragon Knight Sword" 
+                     data-item-price="5.20"
+                     data-item-rarity="Mythical"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_103.png" alt="Item">
+                    <span class="item-price">5,20$</span>
+                    <span class="item-name">Dragon Knight Sword</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_112.png" 
+                     data-item-name="Crystal Maiden Staff" 
+                     data-item-price="3.75"
+                     data-item-rarity="Rare"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_112.png" alt="Item">
+                    <span class="item-price">3,75$</span>
+                    <span class="item-name">Crystal Maiden Staff</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_115.png" 
+                     data-item-name="Juggernaut Mask" 
+                     data-item-price="4.10"
+                     data-item-rarity="Common"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_115.png" alt="Item">
+                    <span class="item-price">4,10$</span>
+                    <span class="item-name">Juggernaut Mask</span>
+                </div>
+
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_124.png" 
+                     data-item-name="Phantom Assassin Cape" 
+                     data-item-price="6.80"
+                     data-item-rarity="Immortal"
+                     data-item-type="Набор"
+                     data-item-slot="Спина">
+                    <img src="./images/v1_124.png" alt="Item">
+                    <span class="item-price">6,80$</span>
+                    <span class="item-name">Phantom Assassin Cape</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_136.png" 
+                     data-item-name="Lina Arcana" 
+                     data-item-price="25.00"
+                     data-item-rarity="Arcana"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_136.png" alt="Item">
+                    <span class="item-price">25,00$</span>
+                    <span class="item-name">Lina Arcana</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_142.png" 
+                     data-item-name="Tidehunter Anchor" 
+                     data-item-price="3.20"
+                     data-item-rarity="Common"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_142.png" alt="Item">
+                    <span class="item-price">3,20$</span>
+                    <span class="item-name">Tidehunter Anchor</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_148.png" 
+                     data-item-name="Witch Doctor Mask" 
+                     data-item-price="2.90"
+                     data-item-rarity="Rare"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_148.png" alt="Item">
+                    <span class="item-price">2,90$</span>
+                    <span class="item-name">Witch Doctor Mask</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_154.png" 
+                     data-item-name="Anti-Mage Blades" 
+                     data-item-price="8.50"
+                     data-item-rarity="Mythical"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_154.png" alt="Item">
+                    <span class="item-price">8,50$</span>
+                    <span class="item-name">Anti-Mage Blades</span>
+                </div>
+
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_160.png" 
+                     data-item-name="Nature's Prophet Staff" 
+                     data-item-price="4.75"
+                     data-item-rarity="Rare"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_160.png" alt="Item">
+                    <span class="item-price">4,75$</span>
+                    <span class="item-name">Nature's Prophet Staff</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_166.png" 
+                     data-item-name="Pudge Hook" 
+                     data-item-price="7.20"
+                     data-item-rarity="Immortal"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_166.png" alt="Item">
+                    <span class="item-price">7,20$</span>
+                    <span class="item-name">Pudge Hook</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_172.png" 
+                     data-item-name="Sven Sword" 
+                     data-item-price="5.60"
+                     data-item-rarity="Mythical"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_172.png" alt="Item">
+                    <span class="item-price">5,60$</span>
+                    <span class="item-name">Sven Sword</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_175.png" 
+                     data-item-name="Drow Ranger Cape" 
+                     data-item-price="3.90"
+                     data-item-rarity="Common"
+                     data-item-type="Набор"
+                     data-item-slot="Спина">
+                    <img src="./images/v1_175.png" alt="Item">
+                    <span class="item-price">3,90$</span>
+                    <span class="item-name">Drow Ranger Cape</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_178.png" 
+                     data-item-name="Legion Commander Helmet" 
+                     data-item-price="6.30"
+                     data-item-rarity="Rare"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_178.png" alt="Item">
+                    <span class="item-price">6,30$</span>
+                    <span class="item-name">Legion Commander Helmet</span>
+                </div>
+
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_91.png" 
+                     data-item-name="Shadow Fiend Arms" 
+                     data-item-price="6.50"
+                     data-item-rarity="Immortal"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_91.png" alt="Item">
+                    <span class="item-price">6,50$</span>
+                    <span class="item-name">Shadow Fiend Arms</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./pics/Arms of Desolation.png" 
+                     data-item-name="Arms of Desolation" 
+                     data-item-price="7.28"
+                     data-item-rarity="Rare"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./pics/Arms of Desolation.png" alt="Item">
+                    <span class="item-price">3,20$</span>
+                    <span class="item-name">Void Helm</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_103.png" 
+                     data-item-name="Dragon Lance" 
+                     data-item-price="4.80"
+                     data-item-rarity="Mythical"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_103.png" alt="Item">
+                    <span class="item-price">4,80$</span>
+                    <span class="item-name">Dragon Lance</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_112.png" 
+                     data-item-name="Crystal Nova" 
+                     data-item-price="3.40"
+                     data-item-rarity="Rare"
+                     data-item-type="Предметы"
+                     data-item-slot="Руки">
+                    <img src="./images/v1_112.png" alt="Item">
+                    <span class="item-price">3,40$</span>
+                    <span class="item-name">Crystal Nova</span>
+                </div>
+                <div class="item" onclick="showItemModal(this)"
+                     data-item-image="./images/v1_115.png" 
+                     data-item-name="Blade Fury" 
+                     data-item-price="5.10"
+                     data-item-rarity="Common"
+                     data-item-type="Набор"
+                     data-item-slot="Голова">
+                    <img src="./images/v1_115.png" alt="Item">
+                    <span class="item-price">5,10$</span>
+                    <span class="item-name">Blade Fury</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <h2 class="filters-title">ФИЛЬТРЫ</h2>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Искать на торговой площадке" oninput="filterItems()">
+            </div>
+            
+            <div class="filter-group">
+                <h3 class="filter-title">Цена</h3>
+                <div class="price-range">
+                    <span>0$</span>
+                    <div class="range-container">
+                        <input type="range" id="priceRange" min="0" max="30" value="30" step="0.1" oninput="updatePriceFilter()">
+                    </div>
+                    <span class="price-value" id="priceValue">30$</span>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h3 class="filter-title">Редкость</h3>
+                <div class="filter-option"><input type="checkbox" name="rarity" value="Immortal" checked onchange="filterItems()"> Immortal</div>
+                <div class="filter-option"><input type="checkbox" name="rarity" value="Arcana" checked onchange="filterItems()"> Arcana</div>
+                <div class="filter-option"><input type="checkbox" name="rarity" value="Mythical" checked onchange="filterItems()"> Mythical</div>
+                <div class="filter-option"><input type="checkbox" name="rarity" value="Rare" checked onchange="filterItems()"> Rare</div>
+                <div class="filter-option"><input type="checkbox" name="rarity" value="Common" checked onchange="filterItems()"> Common</div>
+            </div>
+            
+            <div class="filter-group">
+                <h3 class="filter-title">Тип</h3>
+                <div class="filter-option"><input type="checkbox" name="type" value="Набор" checked onchange="filterItems()"> Набор</div>
+                <div class="filter-option"><input type="checkbox" name="type" value="Курьер" checked onchange="filterItems()"> Курьер</div>
+                <div class="filter-option"><input type="checkbox" name="type" value="Эмблема" checked onchange="filterItems()"> Эмблема</div>
+                <div class="filter-option"><input type="checkbox" name="type" value="Самоцвет" checked onchange="filterItems()"> Самоцвет</div>
+                <div class="filter-option"><input type="checkbox" name="type" value="Предметы" checked onchange="filterItems()"> Предметы</div>
+            </div>
+            
+            <div class="filter-group">
+                <h3 class="filter-title">Слот</h3>
+                <div class="filter-option"><input type="checkbox" name="slot" value="Голова" checked onchange="filterItems()"> Голова</div>
+                <div class="filter-option"><input type="checkbox" name="slot" value="Плечи" checked onchange="filterItems()"> Плечи</div>
+                <div class="filter-option"><input type="checkbox" name="slot" value="Грудь" checked onchange="filterItems()"> Грудь</div>
+                <div class="filter-option"><input type="checkbox" name="slot" value="Ноги" checked onchange="filterItems()"> Ноги</div>
+                <div class="filter-option"><input type="checkbox" name="slot" value="Спина" checked onchange="filterItems()"> Спина</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- информации о товаре -->
+    <div class="item-modal" id="itemModal">
+        <div class="modal-overlay" onclick="hideItemModal()"></div>
+        <div class="modal-content">
+            <div class="modal-close" onclick="hideItemModal()">✕</div>
+            
+            <div class="modal-header">
+                <div class="modal-title">Информация о предмете</div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-item-image">
+                    <img src="./images/v1_91.png" alt="Arms of Desolation" id="modalImage">
+                </div>
+                <div class="modal-item-info">
+                    <h2 class="item-title" id="modalTitle">Inscribed Arms of Desolation</h2>
+                    
+                    <div class="item-details">
+                        <div class="item-detail"><strong id="modalRarity">Immortal</strong></div>
+                        <div class="item-detail"><em>Inscribed</em></div>
+                        <div class="item-detail"><em id="modalSlot">Руки</em></div>
+                        <div class="item-detail"><em>The International 2015</em></div>
+                    </div>
+                    
+                    <div class="item-description">
+                        По венам обитателей Ада течет адская жара, и любое оружие, которое они возьмут в руки, будет извергать из себя стигийскую мощь.
+                    </div>
+                    
+                    <div class="steam-link">
+                        <span><a href="https://steamcommunity.com/market/listings/570/Arms%20of%20Desolation">Посмотреть на площадке Steam</a></span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <div class="price-label">Цена</div>
+                        <div class="price-value" id="modalPrice">7,38$</div>
+                    </div>
+                    
+                    <button class="add-to-sale-btn" onclick="addToBasket()">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="footer-title">Похожие предметы</div>
+                <div class="footer-items">
+                    <div class="footer-item" onclick="showItemModal(this)" data-item-image="./images/v1_97.png" data-item-name="Helm of the Dominator" data-item-price="2.50" data-item-rarity="Rare" data-item-type="Набор" data-item-slot="Голова">
+                        <img src="./images/v1_97.png" alt="Item">
+                        <span class="footer-item-price">2,50$</span>
+                        <span class="footer-item-name">Helm of the Dominator</span>
+                    </div>
+                    <div class="footer-item" onclick="showItemModal(this)" data-item-image="./images/v1_103.png" data-item-name="Dragon Knight Sword" data-item-price="5.20" data-item-rarity="Mythical" data-item-type="Предметы" data-item-slot="Руки">
+                        <img src="./images/v1_103.png" alt="Item">
+                        <span class="footer-item-price">5,20$</span>
+                        <span class="footer-item-name">Dragon Knight Sword</span>
+                    </div>
+                    <div class="footer-item" onclick="showItemModal(this)" data-item-image="./images/v1_112.png" data-item-name="Crystal Maiden Staff" data-item-price="3.75" data-item-rarity="Rare" data-item-type="Предметы" data-item-slot="Руки">
+                        <img src="./images/v1_112.png" alt="Item">
+                        <span class="footer-item-price">3,75$</span>
+                        <span class="footer-item-name">Crystal Maiden Staff</span>
+                    </div>
+                    <div class="footer-item" onclick="showItemModal(this)" data-item-image="./images/v1_115.png" data-item-name="Juggernaut Mask" data-item-price="4.10" data-item-rarity="Common" data-item-type="Набор" data-item-slot="Голова">
+                        <img src="./images/v1_115.png" alt="Item">
+                        <span class="footer-item-price">4,10$</span>
+                        <span class="footer-item-name">Juggernaut Mask</span>
+                    </div>
+                    <div class="footer-item" onclick="showItemModal(this)" data-item-image="./images/v1_124.png" data-item-name="Phantom Assassin Cape" data-item-price="6.80" data-item-rarity="Immortal" data-item-type="Набор" data-item-slot="Спина">
+                        <img src="./images/v1_124.png" alt="Item">
+                        <span class="footer-item-price">6,80$</span>
+                        <span class="footer-item-name">Phantom Assassin Cape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--корзина -->
+    <div class="basket-modal" id="basketModal">
+        <div class="basket-content">
+            <div class="basket-close" onclick="hideBasket()">✕</div>
+            <h2 class="modal-title">Ваша корзина</h2>
+            
+            <div class="basket-items" id="basketItems">
+            </div>
+            
+            <div class="basket-total">
+                Общая сумма: <span id="basketTotal">0,00$</span>
+            </div>
+            
+            <div class="basket-actions">
+                <button class="action-btn clear-btn" onclick="clearBasket()">Очистить</button>
+                <button class="action-btn buy-btn" onclick="alert('Покупка завершена!')">Оплатить</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
